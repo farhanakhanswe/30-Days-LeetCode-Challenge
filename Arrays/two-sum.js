@@ -1,6 +1,6 @@
 /* Question link: https://leetcode.com/problems/two-sum/ */
 
-/* Brute Force Solution */
+/* Brute Force Solution Time Complexity -> O(n^2) and Space Complexity -> O(1) */
 
 var twoSum = function (nums, target) {
     for (let i = 0; i < nums.length; i++) {
