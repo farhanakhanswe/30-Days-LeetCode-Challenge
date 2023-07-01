@@ -1,6 +1,6 @@
 /* Question link: https://leetcode.com/problems/contains-duplicate/ */
 
-/* Brute Force Solution */
+/* Brute Force Solution Time Complexity -> O(n^2) and Space Complexity -> O(1) */
 
 var containsDuplicate = function (nums) {
 
@@ -19,3 +19,18 @@ var containsDuplicate = function (nums) {
     return false;
 };
 
+/* Optimized Solution with Time Complexity -> O(n) and Space Complexity -> O(n) */
+
+var containsDuplicate = function (nums, map = new Map()) {
+
+    for (let i = 0; i < nums.length; i++) {
+        let num = nums[i];
+        let indexOfnum = map.get(num);
+
+        if (indexOfnum !== undefined) return true;
+
+        map.set(num, i);
+    }
+
+    return false;
+};
