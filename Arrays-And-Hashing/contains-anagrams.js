@@ -1,6 +1,6 @@
-/* Question link: https://leetcode.com/problems/contains-duplicate/ */
+/* Question link: https://leetcode.com/problems/valid-anagram/ */
 
-/* Brute Force Solution Time Complexity -> O(n^2) and Space Complexity -> O(1) */
+/* Optimized Solution Time Complexity -> O(n) and Space Complexity -> O(n) */
 
 var isAnagram = function (s, t) {
     s = s.toLowerCase();
@@ -31,6 +31,7 @@ var isAnagram = function (s, t) {
         }
     }
 
+    // Checking if anagram
     for (let [key, value] of sMap) {
         if (tMap.get(key) !== value) {
             return false;
