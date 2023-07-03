@@ -1,0 +1,92 @@
+/******** MAPS *********/
+-------------------------
+
+(1) JavaScript Maps are data structures that store key-value pairs. 
+(2) They allow you to associate values (the "values" in the key-value pairs) with unique keys, similar to dictionaries or hash maps in other programming languages.
+(3) Maps provide efficient lookup and retrieval of values based on their corresponding keys.
+
+(4) The basics of using JavaScript Maps with examples:
+
+    (a) Step 1: Creating a Map
+    -------------------------------------------------------------------------------------------------------------------------
+
+    To create a new Map, you can use the Map constructor or the Map literal notation. Here's an example using both approaches:
+
+        (i) Using the Map constructor
+        const myMap = new Map();
+
+        (ii) Using the Map literal notation
+        const anotherMap = new Map([
+        ['key1', 'value1'],
+        ['key2', 'value2'],
+        ['key3', 'value3']
+        ]);
+
+    In the example above, we create two maps: myMap using the constructor and anotherMap using the literal notation. In the anotherMap example,
+    the key-value pairs are specified within an array, where each sub-array contains the key and its corresponding value.
+
+    (b) Step 2: Adding and Retrieving Values
+
+    To add a new key-value pair to a Map, you can use the set() method. To retrieve a value based on a key, you can use the get() method. Here's an example:
+
+        const myMap = new Map();
+        myMap.set('name', 'John');
+        myMap.set('age', 25);
+
+        console.log(myMap.get('name')); // Output: John
+        console.log(myMap.get('age')); // Output: 25
+
+    In the example above, we create a new map myMap and use the set() method to add key-value pairs. We then use the get() method to retrieve the values based on the keys.
+
+    (c) Step 3: Checking for Key Existence
+
+    To check whether a key exists in a Map, you can use the has() method. Here's an example:
+
+        const myMap = new Map();
+        myMap.set('name', 'John');
+
+        console.log(myMap.has('name')); // Output: true
+        console.log(myMap.has('age')); // Output: false
+
+    In the example above, we use the has() method to check for the existence of keys in the myMap Map.
+
+    (d) Step 4: Deleting Key-Value Pairs
+
+    To remove a key-value pair from a Map, you can use the delete() method. Here's an example:
+
+        const myMap = new Map();
+        myMap.set('name', 'John');
+        myMap.set('age', 25);
+
+        myMap.delete('age');
+
+        console.log(myMap.get('age')); // Output: undefined
+
+    In the example above, we use the delete() method to remove the 'age' key-value pair from the myMap Map.
+
+    (e) Step 5: Iterating Over a Map
+
+    There are several ways to iterate over the key-value pairs in a Map. You can use the for...of loop, the forEach() method, or the entries() method. Here's an example using each approach:
+
+        const myMap = new Map();
+        myMap.set('name', 'John');
+        myMap.set('age', 25);
+
+        // (i) Using for...of loop
+        for (const [key, value] of myMap) {
+        console.log(`${key}: ${value}`);
+        }
+
+        // (ii) Using forEach() method
+        myMap.forEach((value, key) => {
+        console.log(`${key}: ${value}`);
+        });
+
+        // (iii) Using entries() method
+        for (const [key, value] of myMap.entries()) {
+        console.log(`${key}: ${value}`);
+        }
+
+    In the example above, we demonstrate three different methods for iterating over the key-value pairs in a Map: for...of loop, forEach() method, and entries() method. Each approach allows you to access the key and value for each pair.
+
+    
