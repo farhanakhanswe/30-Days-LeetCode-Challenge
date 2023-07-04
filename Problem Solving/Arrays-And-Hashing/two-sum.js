@@ -1,6 +1,9 @@
 /* Question link: https://leetcode.com/problems/two-sum/ */
 
-/* Brute Force Solution Time Complexity -> O(n^2) and Space Complexity -> O(1) */
+/* Brute Force Solution:
+   Time Complexity -> O(n^2) and 
+   Space Complexity -> O(1) 
+*/
 
 var twoSum = function (nums, target) {
     for (let i = 0; i < nums.length; i++) {
@@ -19,7 +22,10 @@ var twoSum = function (nums, target) {
     return [];
 };
 
-/* Optimized Solution with Time Complexity -> O(n) and Space Complexity -> O(n) */
+/* Optimized Solution:
+   Time Complexity -> O(n) and
+   Space Complexity -> O(n)
+*/
 
 var twoSum = function (nums, target, map = new Map()) {
     for (let i = 0; i < nums.length; i++) {

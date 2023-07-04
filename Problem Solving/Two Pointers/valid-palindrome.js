@@ -1,5 +1,9 @@
 /* Question link: https://leetcode.com/problems/valid-palindrome/ */
 
+/* Optimized Solution :
+   Time Complexity -> O(n) and
+   Space Complexity -> O(1)
+*/
 
 var isPalindrome = function (s) {
 

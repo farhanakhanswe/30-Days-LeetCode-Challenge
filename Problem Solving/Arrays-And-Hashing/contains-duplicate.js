@@ -1,6 +1,9 @@
 /* Question link: https://leetcode.com/problems/contains-duplicate/ */
 
-/* Brute Force Solution Time Complexity -> O(n^2) and Space Complexity -> O(1) */
+/* Brute Force Solution :
+   Time Complexity -> O(n^2) and
+   Space Complexity -> O(1)
+*/
 
 var containsDuplicate = function (nums) {
 
@@ -19,7 +22,10 @@ var containsDuplicate = function (nums) {
     return false;
 };
 
-/* Optimized Solution with Time Complexity -> O(n) and Space Complexity -> O(n) */
+/* Optimized Solution : 
+   Time Complexity -> O(n) and
+   Space Complexity -> O(n)
+*/
 
 var containsDuplicate = function (nums, map = new Map()) {
 

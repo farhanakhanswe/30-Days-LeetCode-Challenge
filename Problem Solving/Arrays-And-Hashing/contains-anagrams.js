@@ -1,6 +1,9 @@
 /* Question link: https://leetcode.com/problems/valid-anagram/ */
 
-/* Optimized Solution Time Complexity -> O(n) and Space Complexity -> O(n) */
+/* Optimized Solution :
+   Time Complexity -> O(n) and 
+   Space Complexity -> O(n)
+ */
 
 var isAnagram = function (s, t) {
     s = s.toLowerCase();
