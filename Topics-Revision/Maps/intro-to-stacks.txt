@@ -1,0 +1,67 @@
+/******** STACKS *********/
+-----------------------------
+
+- A stack is a linear data structure that follows the Last-In-First-Out (LIFO) principle. 
+- Imagine a stack of books, where you can only access the topmost book. The last book you place on the stack is the first one you remove. 
+  This is the basic idea behind stacks.
+
+(1) Creating a Stack in JavaScript
+----------------------------------------------------------------------------------------------------------------
+
+In JavaScript, you can implement a stack using an array or a linked list. We'll use an array for simplicity. 
+Here's an example of creating an empty stack:
+
+const stack = [];
+
+(2) Pushing Elements to the Stack
+----------------------------------------------------------------------------------------------------------------
+
+To add elements to the stack, we use the push() method. It adds elements to the top of the stack. Here's an example:
+
+stack.push(1); // Add 1 to the stack
+stack.push(2); // Add 2 to the stack
+stack.push(3); // Add 3 to the stack
+
+Now our stack looks like this: [1, 2, 3], with 3 being the topmost element.
+
+(3) Popping Elements from the Stack
+----------------------------------------------------------------------------------------------------------------
+
+To remove elements from the stack, we use the pop() method. It removes the topmost element from the stack and returns it. Here's an example:
+
+const removedElement = stack.pop(); // Remove 3 from the stack
+console.log(removedElement); // Output: 3
+
+After popping the element, the stack becomes [1, 2], with 2 as the new topmost element.
+
+(4) Peeking at the Top Element
+----------------------------------------------------------------------------------------------------------------
+
+To see the topmost element without removing it, we can use the index notation [length - 1] or the slice() method. Here's an example:
+
+console.log(stack[stack.length - 1]); // Output: 2
+
+The topmost element in the stack is 2.
+
+(5) Checking if the Stack is Empty
+----------------------------------------------------------------------------------------------------------------
+
+We can check if a stack is empty by examining its length. If the length is 0, the stack is empty. Here's an example:
+
+console.log(stack.length === 0); // Output: false (stack is not empty)
+
+(6) Clearing the Stack
+----------------------------------------------------------------------------------------------------------------
+
+To remove all elements from the stack and make it empty, we can use the length property or the splice() method. Here's an example:
+
+stack.length = 0; // Clear the stack
+
+Now the stack is empty: [].
+
+(7) Checking the Size of the Stack
+----------------------------------------------------------------------------------------------------------------
+
+To determine the number of elements in the stack, we can use the length property. Here's an example:
+
+console.log(stack.length); // Output: 0 (stack is empty)
