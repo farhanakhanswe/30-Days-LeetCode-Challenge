@@ -1,0 +1,56 @@
+Set Definition: A set is a built-in object in JavaScript that represents a collection of unique values. It can store any type of values such as primitives or object references.
+
+(1) Creating a Set: You can create an empty set using the new Set() constructor or initialize a set with an iterable object, like an array, using new Set(iterable).
+
+const set1 = new Set(); // Empty Set
+const set2 = new Set([1, 2, 3]); // Set initialized with an array
+
+(2) Adding and Removing Elements: You can add elements to a set using the add(value) method and remove elements using the delete(value) method.
+  The has(value) method can be used to check if a value exists in the set.
+
+const set = new Set();
+set.add(1); // Add an element
+set.add(2);
+set.delete(1); // Remove an element
+console.log(set.has(2)); // true
+
+(3) Size and Clearing: The size property returns the number of elements in a set. You can clear all elements from a set using the clear() method.
+
+const set = new Set([1, 2, 3]);
+console.log(set.size); // 3
+set.clear();
+console.log(set.size); // 0
+
+(4) Iterating over a Set: Sets are iterable, which means you can use loops or iterate over them using methods like forEach() or for...of.
+  
+const set = new Set([1, 2, 3]);
+set.forEach(value => console.log(value));
+// Output: 1, 2, 3
+
+for (const value of set) {
+  console.log(value);
+}
+// Output: 1, 2, 3
+
+(5) Set Operations: Sets have built-in methods for various set operations like union, intersection, and difference.
+
+    (a) Union: The Set.prototype.union() method can be used to create a new set that contains all elements from two sets.
+        
+      const set1 = new Set([1, 2, 3]);
+      const set2 = new Set([3, 4, 5]);
+      const unionSet = new Set([...set1, ...set2]);
+      console.log(unionSet); // Set { 1, 2, 3, 4, 5 }
+      
+    (b) Intersection: The Set.prototype.intersection() method returns a new set containing only the elements that are common to two sets.
+      
+      const set1 = new Set([1, 2, 3]);
+      const set2 = new Set([3, 4, 5]);
+      const intersectionSet = new Set([...set1].filter(value => set2.has(value)));
+      console.log(intersectionSet); // Set { 3 }
+      
+    (c) Difference: The Set.prototype.difference() method returns a new set containing the elements that are in the first set but not in the second set.
+      
+      const set1 = new Set([1, 2, 3]);
+      const set2 = new Set([3, 4, 5]);
+      const differenceSet = new Set([...set1].filter(value => !set2.has(value)));
+      console.log(differenceSet); // Set { 1, 2 }
