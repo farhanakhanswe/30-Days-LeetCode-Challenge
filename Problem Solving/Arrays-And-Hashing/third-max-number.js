@@ -1,22 +1,18 @@
-/* leetcode not accepting this soln */
+/* Leetcode question link: https://leetcode.com/problems/third-maximum-number/ */
 
 
-var thirdMax = function(nums) {
-    nums = nums.sort((a, b) => a - b);
+var thirdMax = function(nums){
+    
+    let set = new Set(nums);
+    
+    setArr = Array.from(set);
 
-    let map = new Map();
-
-    for (let i = 0; i < nums.length; i++) {
-        if (!map.has(nums[i])) {
-            map.set(nums[i], i);
-        }
+    setArr.sort((a,b) => (b - a ));
+    
+    if (setArr.length >= 3) {
+        return setArr[2]; // return thirdMax
     }
 
-    let mapKeysArr = Array.from(map.keys());
-
-    if (mapKeysArr.length === 3) {
-        return mapKeysArr[2];
-    }
-
-    return Math.max(...mapKeysArr);
-};
+    return Math.max(...setArr); // return maxNum;
+    
+}
