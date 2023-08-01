@@ -12,7 +12,7 @@ Topics Covered:
 Throughout the challenge, I mainly focused on the following topics using JavaScript:
 
 (1) Arrays/Strings
-(2) Maps and Sets
+(2) Maps/Sets
 (3) Two Pointers
 
 What to Expect:
