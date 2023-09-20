@@ -5,40 +5,72 @@
    Space Complexity -> O(1) 
 */
 
-var twoSum = function (nums, target) {
+var twoSum = (nums, target) => {
     for (let i = 0; i < nums.length; i++) {
-        let a = nums[i];
+        let firstNum = nums[i];
 
         for (let j = i + 1; j < nums.length; j++) {
-            let b = nums[j];
-            let sum = a + b;
+            let secondNum = nums[j];
+            let sum = firstNum + secondNum;
 
             if (sum === target) {
-                return [j, i]; 
+                return [i, j];
             }
         }
     }
 
-    return [];
-};
+    return [-1, -1];
+}
 
-/* Optimized Solution:
+
+/* Optimized Solution using HashMap:
    Time Complexity -> O(n) and
    Space Complexity -> O(n)
 */
 
-var twoSum = function (nums, target, map = new Map()) {
-    for (let i = 0; i < nums.length; i++) {
-        let num = nums[i];
-        let diff = (target - num);
-        let indexOfDiff = map.get(diff);
+var twoSum = (nums, target) => {
 
-        if (indexOfDiff !== undefined) {
+    let map = new Map();
+
+    for (let i = 0; i < nums.length; i++) {
+        firstNum = nums[i];
+        diff = target - firstNum;
+        indexOfDiff = map.get(diff);
+
+        if (indexOfDiff != undefined) {
             return [i, indexOfDiff];
         }
 
-        map.set(num, i);
+        map.set(nums[i], i);
+    }
+}
+
+
+/* Optimized Solution using Two Pointers:
+   Time Complexity -> O(n) and
+   Space Complexity -> O(n)
+*/
+
+var twoSum = (nums, target) => {
+
+    let sortedNums = [...nums].sort((a, b) => (a - b));
+    let firstPtr = 0;
+    let secondPtr = nums.length - 1;
+
+    while (firstPtr < secondPtr) {
+        let sum = sortedNums[firstPtr] + sortedNums[secondPtr];
+
+        if (sum === target) {
+            firstIndex = nums.indexOf(sortedNums[firstPtr]);
+            secondIndex = nums.lastIndexOf(sortedNums[secondPtr]);
+
+            return [firstIndex, secondIndex];
+        } else if (sum < target) {
+            firstPtr++;
+        } else {
+            secondPtr--;
+        }
     }
 
-    return []; // Return an empty array if no pair is found
-};
+    return [-1, -1];
+}
