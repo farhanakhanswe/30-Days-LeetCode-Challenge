@@ -1,3 +1,6 @@
+// Question Link: https://leetcode.com/problems/palindrome-number/
+
+// Solution is wrong!
 
 var function numIsPalindrome = function(num)
 {
