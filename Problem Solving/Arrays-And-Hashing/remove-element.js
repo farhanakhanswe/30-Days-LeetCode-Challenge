@@ -1,3 +1,5 @@
+// Question Link: https://leetcode.com/problems/remove-element/
+
 var removeElement = function (nums, val) {
     let position = 0; // Position to place the non-target elements
 
