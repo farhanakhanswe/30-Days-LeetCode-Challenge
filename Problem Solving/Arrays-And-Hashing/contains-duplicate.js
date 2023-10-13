@@ -27,15 +27,16 @@ var containsDuplicate = function (nums) {
    Space Complexity -> O(n)
 */
 
-var containsDuplicate = function (nums, map = new Map()) {
+var containsDuplicate = function (nums) {
+
+    let numsMap = new Map();
 
     for (let i = 0; i < nums.length; i++) {
-        let num = nums[i];
-        let indexOfnum = map.get(num);
+        if (numsMap.has(nums[i])) {
+            return true;
+        }
 
-        if (indexOfnum !== undefined) return true;
-
-        map.set(num, i);
+        numsMap.set(nums[i], i);
     }
 
     return false;
