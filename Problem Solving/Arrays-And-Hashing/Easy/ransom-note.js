@@ -31,7 +31,7 @@ const canConstruct = (ransomNote, magazine) => {
         }
     }
 
-    for (let [char, count] of ransomNoteMap.entries()) {
+    for (let [char, count] of ransomNoteMap) {
         if (!magazineMap.has(char) || magazineMap.get(char) < count) {
             return false;
         }
