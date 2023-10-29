@@ -5,26 +5,26 @@
    Space Complexity -> O(n)
  */
 
+const majorityElement = (nums) => {
 
-var majorityElement = function (nums) {
-
-    if (nums.length == 1) {
-        return nums[0];
-    }
-
-    let map = new Map();
-    let maxCount = 0;
+    let numsMap = new Map();
     let majorityEl = null;
+    let highestCount = 0;
+    let condition = Math.floor(nums.length / 2);
 
     for (let i = 0; i < nums.length; i++) {
-        if (map.has(nums[i])) {
-            map.set(nums[i], map.get(nums[i]) + 1);
-            if (map.get(nums[i]) > maxCount) {
-                maxCount = map.get(nums[i]);
-                majorityEl = nums[i];
-            }
+        if (numsMap.has(nums[i])) {
+            let currCount = numsMap.get(nums[i]);
+            numsMap.set(nums[i], currCount + 1);
         } else {
-            map.set(nums[i], 1);
+            numsMap.set(nums[i], 1);
+        }
+    }
+
+    for (let [value, count] of numsMap) {
+        if (count > highestCount && count > condition) {
+            highestCount = count;
+            majorityEl = value;
         }
     }
 
